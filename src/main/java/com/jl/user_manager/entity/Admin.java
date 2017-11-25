@@ -1,6 +1,6 @@
 package com.jl.user_manager.entity;
 /**
- * 
+ * 管理员体类
  * @date 2017年11月10日 上午9:26:39
  * @author lin
  *

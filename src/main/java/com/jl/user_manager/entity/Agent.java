@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * 
+ * 代理实体
  * @date 2017年11月11日 下午3:28:33
  * @author lin
  * 

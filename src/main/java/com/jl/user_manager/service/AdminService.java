@@ -21,7 +21,7 @@ import com.jl.user_manager.entity.Member;
  */
 
 public interface  AdminService  {
-    // 根據用戶名和密碼查詢
+    // 根據用戶名和密碼查詢                                                                                                                                                                                                                                                                                           
     public Admin checkUser(Admin adminUser);
     public void saveLoginLog(Admin adminUser, String ip);
     public boolean addAgent(Agent agent);

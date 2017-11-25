@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- * 
+ * 会员实体
  * @date 2017年11月11日 下午3:28:33
  * @author lin
  * 
@@ -60,7 +60,7 @@ public class Member {
 		return agent;
 	}
 
-	public void setAgent(Agent admin) {
+	public void setAgent(Agent agent) {
 		this.agent = agent;
 	}
 
