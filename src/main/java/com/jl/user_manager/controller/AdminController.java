@@ -79,24 +79,6 @@ public class AdminController {
 		return "error";
 	}
 	
-	@RequestMapping("/agentManager")
-	public String getAgentPage(String username, String password, Map<String, Object> map, HttpSession session) {
-		Admin admin = new Admin();
-		admin.setUsername(username);
-		admin.setPassword(password);
-		
-		if (adminService.checkUser(admin) != null) {
-			session.setAttribute("username", username);
-			map.put("username", username);//存放在request请求域中
-			SessionContext.sessionHandlerByCacheMap(session, username);
-			
-			//返回代理列表
-			
-			return "adminMain";
-		}
-		return "error";
-	}
-	
 	@RequestMapping("/memberPage")
 	public String getMemberPage(Map<String, Object> map) {
 		List<Member> members = adminService.getMembers();
@@ -104,11 +86,11 @@ public class AdminController {
 		return "memberPage";
 	}
 	
-	@RequestMapping("/adminMain")
-	public String getAdminMain(Map<String, Object> map) {
+	@RequestMapping("/agentPage")
+	public String getAgentPage(Map<String, Object> map) {
 		List<Agent> agents = adminService.getAgents();
 		map.put("agents", agents);
-		return "adminMain";
+		return "agentPage";
 	}
 	
 	/**

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
   
 /**
  * SessionContext
+ * 
  * @date 2017年11月8日 下午7:30:20
  * @author lin
  *
@@ -34,12 +35,14 @@ public class SessionContext {
     public synchronized void DelSession(HttpSession session) {  
         if (session != null) {  
             if(session.getAttribute("username")!=null){  
-                sessionMap.remove(session.getAttribute("username").toString()); 
+                sessionMap.remove(session.getAttribute("username").toString());
+                System.out.println(session.getAttribute("username") + " disconnect....1");
             }  
         }  
     }  
     
-    public synchronized void DelSession(String username) {    
+    public synchronized void DelSession(String username) {  
+    	 System.out.println(username + " disconnect....2");
           sessionMap.remove(username); 
     }  
   
@@ -59,7 +62,7 @@ public class SessionContext {
             if(userSession != session) {
 	            //注销在线用户  
 	            userSession.invalidate();
-	            getInstance().DelSession(username);
+	            //getInstance().DelSession(username);
 	            //清除在线用户后，更新map,替换map sessionid    
 	            getInstance().AddSession(username, session);   
             }

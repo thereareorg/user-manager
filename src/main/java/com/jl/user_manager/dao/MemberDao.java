@@ -11,4 +11,7 @@ import com.jl.user_manager.entity.Member;
  */
 public interface MemberDao extends BaseDao<Member> {
 	public List<Member> getMembers();
+	public List<Member> getMembersByAgentID(Integer aid);
+	public List<Member> getMembersPageByAgentID(Integer aid, Integer page, Integer limit);
+	public Integer      countMembersByAgentID(Integer aid);
 }

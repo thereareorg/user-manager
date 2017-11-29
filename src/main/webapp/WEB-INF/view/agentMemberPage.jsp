@@ -7,15 +7,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script>
-function converStatus(status){ 
-	if(status == 0)
-		return "未激活";
-	else if(status == 1)
-		return "正常";
-	return "未知";
-}  
-</script>
 </head>
 <body>
 	<h3>欢迎${username}</h3>

@@ -7,15 +7,14 @@
   <tr height="30px">
     <td width="10%" >左上角</td>
     <td>
-      <a href="agentPage" target="main">代理商</a>
-      <a href="memberPage" target="main">会员管理</a>
+      <a href="memberList/1" target="main">会员管理</a>
       <a href="user.html" target="main">充值中心</a>
     </td>
   </tr>
   <tr height="90%">
      <td ></td>
     <td>
-      <iframe name="main" src="agentPage" width="100%" height="9970px"></iframe>
+      <iframe name="main" src="memberList/1" width="100%" height="9970px"></iframe>
     </td>
   </tr>
   <tr>
