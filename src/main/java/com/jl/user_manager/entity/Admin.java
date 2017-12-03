@@ -6,16 +6,10 @@ package com.jl.user_manager.entity;
  *
  */
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 @Table(name = "adminuser")
@@ -28,9 +22,9 @@ public class Admin {
     private String username;
     private String password;
     
-    @OrderBy(value = "login_time")
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "admin")
-    private Set<AdminLoginLog> adminLoginLogs = new HashSet<AdminLoginLog>();
+//    @OrderBy(value = "login_time")
+//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "admin")
+//    private Set<AdminLoginLog> adminLoginLogs = new HashSet<AdminLoginLog>();
 
     public Integer getUid() {
         return uid;

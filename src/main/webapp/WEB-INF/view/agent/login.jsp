@@ -7,7 +7,10 @@
 <title>用户登录</title>
 </head>
 <body>
-<a href="agent/index">代理登录</a> <br/>
-<a href="admin/index">管理员登录</a>
+<form method="post" action="login">
+    用户名:<input type="text" name="username"/><br/>
+    用户密码:<input type="password" name="password"/><br/>
+    <input type="submit" value="用户登录"/>
+</form>
 </body>
 </html>

@@ -27,10 +27,10 @@ public class AgentDaoImpl extends BaseDaoImpl<Agent> implements AgentDao {
         return (Agent) query.uniqueResult();
     }
 
-    public Agent findOne(Integer uid) {
-        String hql = "from Agent where uid=?";
+    public Agent findOne(Integer aid) {
+        String hql = "from Agent where id=?";
         Query query = this.getCurrentSession().createQuery(hql);
-        query.setParameter(0, uid);
+        query.setParameter(0, aid);
         return (Agent) query.uniqueResult();
     }
     
@@ -57,4 +57,12 @@ public class AgentDaoImpl extends BaseDaoImpl<Agent> implements AgentDao {
     public List<Agent> getAgents() {
     	return find("from Agent");
     }
+
+	public List<Agent> getAgentsByPage(Integer page, Integer rows) {
+		return find("from Agent", page, rows);
+	}
+	
+	public Integer countAgents() {
+		return count("select count(*) from Agent");
+	}
 }

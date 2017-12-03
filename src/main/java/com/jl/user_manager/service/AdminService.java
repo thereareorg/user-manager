@@ -10,6 +10,7 @@ package com.jl.user_manager.service;
 import java.util.List;
 
 import com.jl.user_manager.entity.Admin;
+import com.jl.user_manager.entity.AdminLoginLog;
 import com.jl.user_manager.entity.Agent;
 import com.jl.user_manager.entity.Member;
 
@@ -26,7 +27,14 @@ public interface  AdminService  {
     public void saveLoginLog(Admin adminUser, String ip);
     public boolean addAgent(Agent agent);
     public List<Agent> getAgents();
+    public List<Agent> getAgentsByPage(Integer page, Integer rows);
+    public Integer countAgentPage(Integer rows);
+    public List<Member> getMembersByPage(Integer page, Integer rows);
     public List<Member> getMembers();
+    public Integer countMemberPage(Integer rows);
+    
+    public List<AdminLoginLog> getMyLoginLogsByPage(Integer uid, Integer page, Integer rows);
+	public Integer countLoginLogPage(Integer uid, Integer rows);
 }
 
 

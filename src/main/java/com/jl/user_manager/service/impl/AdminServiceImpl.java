@@ -76,5 +76,46 @@ public class AdminServiceImpl implements AdminService{
     public List<Member> getMembers() {
     	return memberDao.getMembers();
     }
+    
+    /**
+     * 按页查询代理
+     */
+	public List<Agent> getAgentsByPage(Integer page, Integer rows) {
+		return agentDao.getAgentsByPage(page, rows);
+	}
+
+	/**
+     * 按页查询会员
+     */
+	public List<Member> getMembersByPage(Integer page, Integer rows) {
+		return memberDao.getMembersPage(page, rows);
+	}
+
+	/**
+     * 查询代理页数
+     */
+	public Integer countAgentPage(Integer rows) {
+		Integer count = agentDao.countAgents();
+        return (count % rows == 0 ? (count / rows) : (count / rows + 1));
+	}
+
+	@Override
+	public Integer countMemberPage(Integer rows) {
+		Integer count = memberDao.countMembers();
+        return (count % rows == 0 ? (count / rows) : (count / rows + 1));
+	}
+
+	@Override
+	public List<AdminLoginLog> getMyLoginLogsByPage(Integer uid, Integer page,
+			Integer rows) {
+		return adminLoginLogDao.getLoginLogsByPage(uid, page, rows);
+	}
+
+	@Override
+	public Integer countLoginLogPage(Integer uid, Integer rows) {
+		Integer count = adminLoginLogDao.countLoginLog(uid);
+        return (count % rows == 0 ? (count / rows) : (count / rows + 1));
+	}
+
 }
 

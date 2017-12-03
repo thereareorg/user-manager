@@ -40,13 +40,13 @@ public class MemberDaoImpl extends BaseDaoImpl<Member> implements MemberDao{
 	@Override
 	public List<Member> getMembersPageByAgentID(Integer aid, Integer page,
 			Integer limit) {
-		    String hql = "from Member m where m.agent.aid = ?";
-	        Query query = this.getCurrentSession().createQuery(hql);
-	        query.setParameter(0, aid);
-	        List<Member> list = query.setFirstResult((page - 1) * limit).setMaxResults(limit).list();
-	        if (list != null && list.size() > 0) {
-	            return list;
-	        }
+	    String hql = "from Member m where m.agent.aid = ?";
+        Query query = this.getCurrentSession().createQuery(hql);
+        query.setParameter(0, aid);
+        List<Member> list = query.setFirstResult((page - 1) * limit).setMaxResults(limit).list();
+        if (list != null && list.size() > 0) {
+            return list;
+        }
 		return null;
 	}
 
@@ -55,6 +55,23 @@ public class MemberDaoImpl extends BaseDaoImpl<Member> implements MemberDao{
 		String hql = "select count(*) from Member m ";
         hql += "where m.agent.aid = ?";
         return count(hql, aid);
+	}
+
+	@Override
+	public Integer countMembers() {
+		String hql = "select count(*) from Member";
+		return count(hql);
+	}
+
+	@Override
+	public List<Member> getMembersPage(Integer page, Integer limit) {
+		String hql = "from Member";
+        Query query = this.getCurrentSession().createQuery(hql);
+        List<Member> list = query.setFirstResult((page - 1) * limit).setMaxResults(limit).list();
+        if (list != null && list.size() > 0) {
+            return list;
+        }
+		return null;
 	}
 	
 }

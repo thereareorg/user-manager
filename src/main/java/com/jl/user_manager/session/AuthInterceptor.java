@@ -25,7 +25,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
         response.setContentType("text/html;charset=UTF-8");
    
         //过滤登录、退出访问  
-        String[] noFilters = new String[] { "/admin/login", "/person/logout", "/agent/login"};  
+        String[] noFilters = new String[] { "/admin/login", "/admin/index", "/agent/login", "/agent/index"};  
         String uri = request.getRequestURI();  
         
         boolean beFilter = true;  
@@ -36,7 +36,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
             }  
         } 
         
-        System.out.println("uri:" + uri + "beFilter:" + beFilter + "sessionid:" + request.getSession().getId());  
+        //System.out.println("uri:" + uri + "beFilter:" + beFilter + "sessionid:" + request.getSession().getId());  
         String username = (String) request.getSession().getAttribute("username");  
         
         if (beFilter) {  //如果不是"/admin/login", "/person/logout"

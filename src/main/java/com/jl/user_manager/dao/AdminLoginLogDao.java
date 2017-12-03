@@ -1,5 +1,7 @@
 package com.jl.user_manager.dao;
 
+import java.util.List;
+
 import com.jl.user_manager.entity.AdminLoginLog;
 
 /**
@@ -9,4 +11,6 @@ import com.jl.user_manager.entity.AdminLoginLog;
  *
  */
 public interface AdminLoginLogDao extends BaseDao<AdminLoginLog>{
+	public List<AdminLoginLog> getLoginLogsByPage(Integer uid, Integer page, Integer rows);
+	 public Integer countLoginLog(Integer uid);
 }

@@ -8,7 +8,7 @@
     <td width="10%" >左上角</td>
     <td>
       <a href="memberList/1" target="main">会员管理</a>
-      <a href="user.html" target="main">充值中心</a>
+      <a href="loginLogList/1" target="main">登录记录</a>
     </td>
   </tr>
   <tr height="90%">

@@ -10,7 +10,20 @@ import com.jl.user_manager.entity.Admin;
  */
 
 public interface AdminDao extends BaseDao<Admin> {
+	/**
+	 * 验证用户名密码
+	 * 
+	 * @param username
+	 * @param password
+	 * @return
+	 */
     public Admin findByAdminnameAndPassword(String username, String password);
-    public Admin findOne(Integer aid);
+    /**
+     * 查询Admin
+     * 
+     * @param uid
+     * @return
+     */
+    public Admin findOne(Integer uid);
 }
 
