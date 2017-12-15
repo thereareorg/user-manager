@@ -84,11 +84,21 @@ public class AdminController {
 		return "error";
 	}
 	
+	/**
+	 * 管理员登录页面
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/index")
 	public String getLoginPage() {
 		return "admin/login";
 	}
 	
+	/**
+	 * 管理员主界面
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/main")
 	public String getMain() {
 		return "admin/main";

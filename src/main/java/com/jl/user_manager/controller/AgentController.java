@@ -90,7 +90,7 @@ public class AgentController {
 	}
 	
 	/**
-	 * 获取登录页面
+	 * 代理登录页面
 	 * @return
 	 */
 	@RequestMapping("/index")

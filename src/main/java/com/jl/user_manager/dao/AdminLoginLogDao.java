@@ -11,6 +11,21 @@ import com.jl.user_manager.entity.AdminLoginLog;
  *
  */
 public interface AdminLoginLogDao extends BaseDao<AdminLoginLog>{
+	/**
+	 * 获取登录日志
+	 * 
+	 * @param uid
+	 * @param page
+	 * @param rows
+	 * @return
+	 */
 	public List<AdminLoginLog> getLoginLogsByPage(Integer uid, Integer page, Integer rows);
-	 public Integer countLoginLog(Integer uid);
+	
+	/**
+	 * 登录日志总条数
+	 * 
+	 * @param uid
+	 * @return
+	 */
+	public Integer countLoginLog(Integer uid);
 }

@@ -44,19 +44,19 @@ CREATE TABLE `member` (
 /*登录记录*/
 CREATE TABLE `adminuser_login_log` (
   `uid` int(11) NOT NULL,
-  `login_time` datetime NOT NULL,
+  `login_time` datetime default current_timestamp,
   `ip` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `member_login_log` (
   `mid` int(11) NOT NULL,
-  `login_time` datetime NOT NULL,
+  `login_time` datetime default current_timestamp,
   `ip` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `agent_login_log` (
   `aid` int(11) NOT NULL,
-  `login_time` datetime NOT NULL,
+  `login_time` datetime default current_timestamp,
   `ip` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
