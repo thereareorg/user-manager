@@ -88,11 +88,11 @@
 				</tr>
 				<tr align="center">
 					<td colspan="7">第<c:out value="${page }" />/<c:out
-							value="${count}" />页 <c:if test="${page != 1 }">
+							value="${count}" />页 <c:if test="${page != 1  && count > 0}">
 							<a href="${ pageContext.request.contextPath }/agent/loginLogList/1">首页</a>|
 								<a
 								href="${ pageContext.request.contextPath }/agent/loginLogList/<c:out value="${page - 1 }"/>">上一页</a>|
-							</c:if> <c:if test="${page != count }">
+							</c:if> <c:if test="${page != count  && count > 0}">
 							<a
 								href="${ pageContext.request.contextPath }/agent/loginLogList/<c:out value="${page + 1 }"/>">下一页</a>|
 								<a

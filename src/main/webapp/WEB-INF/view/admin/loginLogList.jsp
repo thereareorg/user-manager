@@ -61,7 +61,7 @@
 			<TBODY>
 				<tr>
 					<td class="ta_01" align="center" bgColor="#afd1f3">
-						<strong>会员列表</strong>
+						<strong>登录记录</strong>
 					</td>
 				</tr>
 				<tr>
@@ -88,15 +88,15 @@
 				</tr>
 				<tr align="center">
 					<td colspan="7">第<c:out value="${page }" />/<c:out
-							value="${count}" />页 <c:if test="${page != 1 }">
-							<a href="${ pageContext.request.contextPath }/agent/loginLogList/1">首页</a>|
+							value="${count}" />页 <c:if test="${page != 1 && count > 0}">
+							<a href="${ pageContext.request.contextPath }/admin/loginLogList/1">首页</a>|
 								<a
-								href="${ pageContext.request.contextPath }/agent/loginLogList/<c:out value="${page - 1 }"/>">上一页</a>|
-							</c:if> <c:if test="${page != count }">
+								href="${ pageContext.request.contextPath }/admin/loginLogList/<c:out value="${page - 1 }"/>">上一页</a>|
+							</c:if> <c:if test="${page != count && count > 0}">
 							<a
-								href="${ pageContext.request.contextPath }/agent/loginLogList/<c:out value="${page + 1 }"/>">下一页</a>|
+								href="${ pageContext.request.contextPath }/admin/loginLogList/<c:out value="${page + 1 }"/>">下一页</a>|
 								<a
-								href="${ pageContext.request.contextPath }/agent/loginLogList/<c:out value="${count }"/>">尾页</a>|
+								href="${ pageContext.request.contextPath }/admin/loginLogList/<c:out value="${count }"/>">尾页</a>|
 							</c:if>
 					</td>
 				</tr>

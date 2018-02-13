@@ -178,7 +178,7 @@ public class AdminController {
 	 */
 	@RequestMapping("/loginLogList/{page}")
 	public ModelAndView loginLogList(@PathVariable("page") Integer page, HttpSession session) {
-		ModelAndView modelAndView = new ModelAndView("agent/loginLogList");
+		ModelAndView modelAndView = new ModelAndView("admin/loginLogList");
 		Integer uid = Integer.parseInt(session.getAttribute("uid").toString());
 		System.out.println("uid:" + uid);
 		List<AdminLoginLog> loginLogs = adminService.getMyLoginLogsByPage(uid, page, 4);

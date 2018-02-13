@@ -26,6 +26,9 @@ public class Agent {
 	private String name;
 	private String phone;
 	private String area;
+	private String server_ip;
+	private Integer server_port;
+	private Integer status;       	
 	private String register_code;
 	private Date create_time;
 
@@ -92,5 +95,28 @@ public class Agent {
 	public void setCreate_time(Date create_time) {
 		this.create_time = create_time;
 	}
+	
+	public String getServer_ip() {
+		return server_ip;
+	}
 
+	public void setServer_ip(String server_ip) {
+		this.server_ip = server_ip;
+	}
+
+	public Integer getServer_port() {
+		return server_port;
+	}
+
+	public void setServer_port(Integer server_port) {
+		this.server_port = server_port;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
 }

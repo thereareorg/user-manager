@@ -72,6 +72,14 @@
 				<td><input type="text" value="${agent.register_code}" name="register_code" /></td>
 			</tr>
 			<tr>
+				<td>服务器地址：</td>
+				<td><input type="text" value="${agent.server_ip}" name="server_ip" /></td>
+			</tr>
+			<tr>
+				<td>服务器端口：</td>
+				<td><input type="text" value="${agent.server_port}" name="server_port" /></td>
+			</tr>
+			<tr>
 			
 				<td align="right">
 				<input type="submit" value="添加" />
@@ -89,7 +97,7 @@
 			<TBODY>
 				<tr>
 					<td class="ta_01" align="center" bgColor="#afd1f3">
-						<strong>会员列表</strong>
+						<strong>代理列表</strong>
 					</td>
 				</tr>
 				<tr>
@@ -101,6 +109,8 @@
 								style="FONT-WEIGHT: bold; FONT-SIZE: 12pt; HEIGHT: 25px; BACKGROUND-COLOR: #afd1f3">
 								<td align="center" width="10%">账号</td>
 								<td align="center" width="10%">姓名</td>
+								<td align="center" width="10%">服务器IP</td>
+								<td align="center" width="10%">端口</td>
 								<td align="center" width="10%">注册时间</td>
 								<td align="center" width="10%">注册码</td>
 								<td align="center" width="10%">编号</td>
@@ -109,15 +119,19 @@
 								<tr onmouseover="this.style.backgroundColor = 'white'"
 									onmouseout="this.style.backgroundColor = '#F5FAFE';">
 									<td style="CURSOR: hand; HEIGHT: 22px" align="center"
-										width="17%"><c:out value="${o.username }" /></td>
+										width="14%"><c:out value="${o.username }" /></td>
 									<td style="CURSOR: hand; HEIGHT: 22px" align="center"
-										width="17%"><c:out value="${o.name }" /></td>										
+										width="14%"><c:out value="${o.name }" /></td>	
 									<td style="CURSOR: hand; HEIGHT: 22px" align="center"
-										width="17%"><c:out value="${o.create_time }" /></td>
+										width="14%"><c:out value="${o.server_ip }" /></td>
 									<td style="CURSOR: hand; HEIGHT: 22px" align="center"
-										width="17%"><c:out value="${o.register_code }" /></td>
+										width="14%"><c:out value="${o.server_port }" /></td>									
 									<td style="CURSOR: hand; HEIGHT: 22px" align="center"
-										width="17%"><c:out value="${o.aid }" /></td>
+										width="14%"><c:out value="${o.create_time }" /></td>
+									<td style="CURSOR: hand; HEIGHT: 22px" align="center"
+										width="14%"><c:out value="${o.register_code }" /></td>
+									<td style="CURSOR: hand; HEIGHT: 22px" align="center"
+										width="14%"><c:out value="${o.aid }" /></td>
 								</tr>
 							</c:forEach>
 						</table>
@@ -125,11 +139,11 @@
 				</tr>
 				<tr align="center">
 					<td colspan="7">第<c:out value="${page }" />/<c:out
-							value="${count}" />页 <c:if test="${page != 1 }">
+							value="${count}" />页 <c:if test="${page != 1  && count > 0}">
 							<a href="${ pageContext.request.contextPath }/admin/agentList/1">首页</a>|
 								<a
 								href="${ pageContext.request.contextPath }/admin/agentList/<c:out value="${page - 1 }"/>">上一页</a>|
-							</c:if> <c:if test="${page != count }">
+							</c:if> <c:if test="${page != count  && count > 0}">
 							<a
 								href="${ pageContext.request.contextPath }/admin/agentList/<c:out value="${page + 1 }"/>">下一页</a>|
 								<a
